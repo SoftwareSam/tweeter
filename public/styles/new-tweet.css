@@ -1,0 +1,19 @@
+.new-tweet {
+  background: #EEEEEE;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 10px;
+
+}
+
+.new-tweet h2{
+  border-bottom: solid;
+}
+
+textarea {
+  width: 100%;
+}
+
+#counter {
+  text-align: right;
+}
