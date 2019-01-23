@@ -3,7 +3,7 @@
   margin-left: 2em;
   margin-right: 2em;
   padding: 10px;
-
+  border-radius: 25px;
 }
 
 .new-tweet h2{
@@ -14,6 +14,12 @@ textarea {
   width: 100%;
 }
 
-#counter {
-  text-align: right;
+.counter {
+  right: 0px;
+  padding-left: 250px;
 }
+
+.container {
+
+}
+
