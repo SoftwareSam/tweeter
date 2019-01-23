@@ -12,7 +12,6 @@ $(document).ready(function() {
       $(this).siblings('.counter').css("color", "black");
     } else $(this).siblings('.counter').css("color", "red");
   });
-
 });
 
 
