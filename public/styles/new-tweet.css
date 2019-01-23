@@ -8,6 +8,8 @@
 
 .new-tweet h2{
   border-bottom: solid;
+  position: top;
+  margin-top: 0px;
 }
 
 textarea {
@@ -36,7 +38,7 @@ textarea {
 
 article.tweets header {
   margin-top: 1px;
-  height: 30px;
+  height: 50px;
   /*background: beige;*/
 }
 
@@ -63,7 +65,7 @@ article.tweets header {
   font-weight: normal;
 }
 
-.tweets p {
+.tweet-display {
   height: 100px;
   background: white;
 }
