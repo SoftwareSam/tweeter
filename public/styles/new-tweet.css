@@ -27,12 +27,17 @@ textarea {
   margin-top: 2em;
   padding: 5px;
   border-radius: 5px;
+  opacity: 0.55;
+}
+
+.tweets:hover {
+  opacity: 1;
 }
 
 article.tweets header {
-  margin-top: 0em;
-  height: 50px;
-  background: beige;
+  margin-top: 1px;
+  height: 30px;
+  /*background: beige;*/
 }
 
 .tweets img {
@@ -44,6 +49,13 @@ article.tweets header {
   float: left;
 }
 
+.tweets h6 {
+  float: right;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: normal;
+}
+
 .tweets h5 {
   border-top: solid;
   font-family: Arial;
@@ -52,7 +64,7 @@ article.tweets header {
 }
 
 .tweets p {
-  height: 150px;
+  height: 100px;
   background: white;
 }
 
