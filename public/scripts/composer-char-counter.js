@@ -6,17 +6,14 @@ $(document).ready(function() {
     let totalLen = maxLen - tweetLen;
     let out = $(this).siblings('.counter');
     out.text(totalLen);
+
+
+  if(totalLen >= 0){
+    $('.counter').css("color", "black");
+  }
+  else $('.counter').css("color", "red");
   });
 
-  var charLimit = parseInt($('#counter').text());
-    var color = 'black';
-      if (charLimit >= 0) {
-        color = 'black';
-      }
-      else if (charLimit < 0) {
-        color = 'red';
-      }
-      $('#counter').css('color', color);
-  });
+});
 
 
