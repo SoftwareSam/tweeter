@@ -24,35 +24,117 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
+$(document).ready(function() {
+
 var $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
 console.log($tweet); // to see what it looks like
 $('#tweets-container').append($tweet);
 
+  function createTweetElement(){
+    let tweetElement = $('<article>').text(tweetData.user.name);
 
- function createTweetElement(tweet){
 
-  let img = $("<img>").attr("src", tweet.user.avatars.small);
-  console.log(img);
 
-  let h3 = $("<h3>").text(tweet.user.name);
-  console.log(h3);
 
-  let h6 = $("<h6>").text(tweet.user.handle);
-  console.log(h6);
+    return tweetElement;
+  }
 
-  let header = $("<header>").append(img).append(h3).append(h6);
-  console.log(header);
 
-  let div = $("<div>").text(tweet.content.text);
-  console.log(div);
 
-  let h5 = $("<h5>").text(tweet.created_at);
-  console.log(h5);
+});
 
-  return tweet;
 
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function renderTweets(tweets) {
+  // // loops through tweets
+  // tweetData.forEach(function(createTweetElement)  {
+  //   let data = tweetData;
+  // });
+  //   // calls createTweetElement for each tweet
+
+  //   // takes return value and appends it to the tweets container
+  // }
+
+ // function createTweetElement(tweet){
+
+ //  let img = $("<img>").attr("src", tweet.user.avatars.small);
+ //  let h3 = $("<h3>").text(tweet.user.name);
+ //  let h6 = $("<h6>").text(tweet.user.handle);
+ //  let header = $("<header>").append(img).append(h3).append(h6);
+
+ //  let div = $("<div>").text(tweet.content.text);
+ //  let h5 = $("<h5>").text(tweet.created_at); //footer
+
+ //  let main = $("<main>").append(header).append(div).append(h5);
+
+ // }
 
 
