@@ -20,5 +20,23 @@ textarea {
   color: black;
 }
 
+.tweets {
+  background: #EEEEEE;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 2em;
+  padding: 5px;
+  border-radius: 5px;
+}
 
+article.tweets header {
+  margin-top: 0em;
+  height: 50px;
+  background: beige;
+}
+
+.tweets img {
+  height: 50px;
+  position: relative;
+}
 
