@@ -3,7 +3,7 @@
   margin-left: 2em;
   margin-right: 2em;
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 5px;
 }
 
 .new-tweet h2{
@@ -37,6 +37,22 @@ article.tweets header {
 
 .tweets img {
   height: 50px;
-  position: relative;
+  float: left;
 }
+
+.tweets h3 {
+  float: left;
+}
+
+.tweets h5 {
+  border-top: solid;
+}
+
+.tweets p {
+  height: 150px;
+  background: white;
+}
+
+
+
 
