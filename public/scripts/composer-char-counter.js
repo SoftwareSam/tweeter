@@ -1,6 +1,6 @@
 $(document).ready(function() {
 //This handles the decreasing of the counter. All characters including SPACE count.
-  $(".tweet-box").on('keyup', function() {
+  $(".tweet-box").on('keyup', function() { //
     let maxLen = 140;
     let tweetLen = $('.tweet-box').val().length;
     let totalLen = maxLen - tweetLen;
