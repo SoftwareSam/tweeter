@@ -32,8 +32,11 @@ $(document).ready(function() {
     if(tweetLen > 140 || tweetLen === 0)  {
       return alert("Character error");
     }
-   $.post('http://localhost:8080/tweets', output);
-
+    $.post('http://localhost:8080/tweets', output)
+     .then(function(){
+      $('#tweets-container').empty();
+      loadTweets();
+    });
   });
 
 
@@ -42,6 +45,7 @@ $(document).ready(function() {
       let appTweet = createTweetElement(tweet); // calls createTweetElement for each tweet
       $('#tweets-container').append(appTweet);  // takes return value and appends it to the tweets container
     });
+
   }
 
   function createTweetElement(tweet){
