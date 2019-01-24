@@ -6,48 +6,74 @@
 
  // Test / driver code (temporary). Eventually will get this from the server.
 
-
-
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": {
-      "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-      "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-      "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+const tweetData = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": {
+        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
+        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+      },
+      "handle": "@SirIsaac"
     },
-    "handle": "@SirIsaac"
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": {
+        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
+        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+      },
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
   },
-  "created_at": 1461116232227
-}
+  {
+    "user": {
+      "name": "Johann von Goethe",
+      "avatars": {
+        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+      },
+      "handle": "@johann49"
+    },
+    "content": {
+      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+    },
+    "created_at": 1461113796368
+  }
+];
 
 $(document).ready(function() {
 
-var $tweet = createTweetElement(tweetData);
+// var $tweet = createTweetElement(tweetData);
 
 // Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet);
+// console.log($tweet); // to see what it looks like
 
-        // <article class="tweets">
-        //   <header>
-        //     <img class="logo" src="/images/bird.png">
-        //     <h3>Head</h3>
-        //     <h6>@MrHead</h6>
-        //   </header>
 
-        //   <div class="tweet-display"> THE TWEET </div>
+  function renderTweets(tweets) {
 
-        //   <footer>
-        //     <h5>10 days ago</h5>
-        //   </footer>
-        // </article>
+    tweets.forEach(function(tweet){
+      let appTweet = createTweetElement(tweet);
+      $('#tweets-container').append(appTweet);
+    });
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+  }
 
   function createTweetElement(tweet){
-    //this creates an article tag, puts the contents of tweetData>User>Name inside it, and then assigns that whole thing to a variable.
+
     let tweetElement = $('<article>').addClass('tweets');
 
     let tweetImg = $('<img>').attr("src", tweet.user.avatars.small);
@@ -66,9 +92,10 @@ $('#tweets-container').append($tweet);
                 .append(tweetFoot);
 
 
-    // let main = $('<main>').append(tweetElement).append(tweetName);
+
     return tweetElement;
   }
+  renderTweets(tweetData);
 
 });
 
