@@ -55,11 +55,14 @@ const tweetData = [
 
 $(document).ready(function() {
 
-// var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-
+  function loadTweets() {
+    console.log("getting tweet");
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      console.log('Success: ', tweets);
+      renderTweets(tweets);
+    });
+  }
 
   function renderTweets(tweets) {
 
@@ -73,6 +76,7 @@ $(document).ready(function() {
   }
 
   function createTweetElement(tweet){
+
 
     let tweetElement = $('<article>').addClass('tweets');
 
@@ -95,7 +99,9 @@ $(document).ready(function() {
 
     return tweetElement;
   }
-  renderTweets(tweetData);
+
+  // renderTweets(tweetData);
+  loadTweets()
 
 });
 
