@@ -56,27 +56,37 @@ const tweetData = [
 $(document).ready(function() {
 
   function loadTweets() {
-    console.log("getting tweet");
-    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    $.get('http://localhost:8080/tweets')
     .then(function (tweets) {
       console.log('Success: ', tweets);
       renderTweets(tweets);
     });
   }
 
-  function renderTweets(tweets) {
+  function postTweets(){
+    event.preventDefault();
+    $.post('http://localhost:8080/tweets', {
+    message: 'howdy do'
+    })
+  }
 
-    tweets.forEach(function(tweet){
-      let appTweet = createTweetElement(tweet);
-      $('#tweets-container').append(appTweet);
+  $('#tweetForm').submit(function(event){
+    event.preventDefault();
+    let output = $( this ).serialize();
+    $.post('http://localhost:8080/tweets', output);
+
+
+  });
+
+
+  function renderTweets(tweets) {
+    tweets.forEach(function(tweet){             // loops through tweets
+      let appTweet = createTweetElement(tweet); // calls createTweetElement for each tweet
+      $('#tweets-container').append(appTweet);  // takes return value and appends it to the tweets container
     });
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
   }
 
   function createTweetElement(tweet){
-
 
     let tweetElement = $('<article>').addClass('tweets');
 
@@ -90,19 +100,14 @@ $(document).ready(function() {
     let tweetH5 = $('<h5>').text(tweet.created_at);
     let tweetFoot = $('<footer>').append(tweetH5);
 
-
     tweetElement.append(tweetHeader)
                 .append(tweetDiv)
                 .append(tweetFoot);
 
-
-
     return tweetElement;
   }
 
-  // renderTweets(tweetData);
-  loadTweets()
-
+  loadTweets();
 });
 
 
