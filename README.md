@@ -15,3 +15,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## NOTES
+Pressed for time I had made sure that it is functional. Only current issue is that the error message doesn't display on the first click, although it looks like it will. From the second click onwards it functions correctly.
