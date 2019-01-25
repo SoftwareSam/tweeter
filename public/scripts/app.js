@@ -8,7 +8,6 @@
 
 $(document).ready(function() {
 
-
     $('#compose').click(function() {
       $('.new-tweet').slideToggle();
       $('.tweet-box').select();
@@ -30,7 +29,6 @@ $(document).ready(function() {
     if(tweetLen > 140)  {
       $('.errors').slideToggle();
       return $('.errors').text("Too many characters");
-      // return alert("Character error");
     }
     if(tweetLen === 0){
       $('.errors').slideToggle();
@@ -44,13 +42,11 @@ $(document).ready(function() {
     });
   });
 
-
   function renderTweets(tweets) {
     tweets.forEach(function(tweet){             // loops through tweets
       let appTweet = createTweetElement(tweet); // calls createTweetElement for each tweet
       $('#tweets-container').append(appTweet);  // takes return value and appends it to the tweets container
     });
-
   }
 
   function createTweetElement(tweet){
@@ -73,7 +69,6 @@ $(document).ready(function() {
 
     return tweetElement;
   }
-
   loadTweets();
 });
 
