@@ -22,25 +22,24 @@ $(document).ready(function() {
     });
   }
 
-  // function postTweets(){
-  //   event.preventDefault();
-  //   $.post('http://localhost:8080/tweets', {
-  //   message: 'howdy do'
-  //   })
-  // }
-
-
   $('#tweetForm').submit(function(event){
     event.preventDefault();
     let output = $( this ).serialize();
     let tweetLen = $('.tweet-box').val().length;
-    // console.log(output);
-    if(tweetLen > 140 || tweetLen === 0)  {
-      return alert("Character error");
+
+    if(tweetLen > 140)  {
+      $('.errors').slideToggle();
+      return $('.errors').text("Too many characters");
+      // return alert("Character error");
+    }
+    if(tweetLen === 0){
+      $('.errors').slideToggle();
+      return $('.errors').text("Field is Empty");
     }
     $.post('http://localhost:8080/tweets', output)
      .then(function(){
       $('#tweets-container').empty();
+      $('.errors').empty();
       loadTweets();
     });
   });
