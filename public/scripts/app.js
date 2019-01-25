@@ -8,6 +8,12 @@
 
 $(document).ready(function() {
 
+
+    $('#compose').click(function() {
+      $('.new-tweet').slideToggle();
+      $('.tweet-box').select();
+    });
+
   function loadTweets() {
     $.get('http://localhost:8080/tweets')
     .then(function (tweets) {
